@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <h2>Dashboard</h2>
+        </div>
+        <div id="user">
+            
+            <h5> 
+                <img src="./img/user.jpeg" alt="">
+                Luis Grijalva
+            </h5>
+        </div>
+    </header>
+
+    <aside>
+        <nav>
+            <ul>
+                <li>
+                    <a href=""> <i class="fa fa-home"></i> Inicio</a>
+                </li>
+                <li>
+                    <a href=""> <i class="fa fa-shopping-cart"></i> Productos</a>
+                </li>
+                <li>
+                    <a href=""> <i class="fa fa-users"></i> Usuarios</a>
+                </li>
+                <li>
+                    <a href=""> <i class="fa fa-arrow-left"></i> Salir</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <div id="container">
+            <h1>Bienvenidos</h1>
+            <button class="btn oculto">Primario</button>
+            <button class="btn danger oculto">Danger</button>
+            <button class="btn warning oculto">Warning</button>
+            <button class="btn oculto">Alternativo</button>
+            <br>
+            <input type="number" placeholder="Introduce Edad" 
+                   id="txtEdad" min="1" max="150" value="20">
+            <button class="btn" onclick="calcular()">Calcular</button>
+            <h5 id="lblResultado"></h5>
+            <div id="resultado"> </div>
+        </div>
+        <footer>
+            Todos los derechos Reservados 2021
+        </footer>
+    </main>
+    <script>
+       function calcular(){
+          var campo = document.getElementById("txtEdad");
+          var valor= campo.value;
+          if( valor < 18){
+            document.getElementById("lblResultado").innerHTML="Eres menor de edad";
+          }else if( valor > 18){
+            document.getElementById("lblResultado").innerHTML="Eres Mayor de edad";
+          }else{
+            document.getElementById("lblResultado").innerHTML="Eres Saca la IFE";
+          }//llave del else
+          var todo="";
+          for(var x=0;x<valor;x++){
+            todo=todo+"<button>HOLA</button>";
+          }
+          document.getElementById("resultado").innerHTML = todo;
+          
+       }//llave de la funcion
+    </script>    
+</body>
+</html>
